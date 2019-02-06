@@ -41,8 +41,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Beacause it&apos;s working !!!</string>
 	<key>UIAppFonts</key>
 	<array>
+		<string></string>
 		<string>ThirstySoftRegular.otf</string>
 	</array>
 </dict>
