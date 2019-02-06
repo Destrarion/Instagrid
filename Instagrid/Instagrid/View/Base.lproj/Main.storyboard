@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_5" orientation="portrait">
+    <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -24,23 +24,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagrid" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7G8-ng-Rm3">
-                                <rect key="frame" x="138" y="68" width="138" height="29.333333333333329"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagrid" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7G8-ng-Rm3">
+                                <rect key="frame" x="138" y="68" width="138" height="32.5"/>
                                 <fontDescription key="fontDescription" name="ThirstySoftRegular" family="Thirsty Soft" pointSize="25"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CUw-kF-sAa" userLabel="Show views" customClass="ShowView" customModule="Instagrid" customModuleProvider="target">
-                                <rect key="frame" x="12" y="155.33333333333334" width="390" height="436.66666666666663"/>
+                                <rect key="frame" x="12" y="158.5" width="390" height="433.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="xzw-dv-s2p" userLabel="Show stack view">
-                                        <rect key="frame" x="8" y="8" width="374" height="420.66666666666669"/>
+                                        <rect key="frame" x="8" y="8" width="374" height="417.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="rHT-fZ-tbq" userLabel="Top view">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="206.33333333333334"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="205"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T4g-hr-Uel">
-                                                        <rect key="frame" x="0.0" y="0.0" width="183" height="206.33333333333334"/>
+                                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T4g-hr-Uel">
+                                                        <rect key="frame" x="0.0" y="0.0" width="183" height="205"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="Blue cross"/>
                                                         <connections>
@@ -48,7 +48,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TIb-wj-YcS" userLabel="Button Top Right">
-                                                        <rect key="frame" x="191" y="0.0" width="183" height="206.33333333333334"/>
+                                                        <rect key="frame" x="191" y="0.0" width="183" height="205"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="Blue cross"/>
                                                         <connections>
@@ -58,10 +58,10 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Q0r-NQ-yjc" userLabel="Bottom view">
-                                                <rect key="frame" x="0.0" y="214.33333333333331" width="374" height="206.33333333333331"/>
+                                                <rect key="frame" x="0.0" y="213" width="374" height="204.5"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kt3-Ea-sra" userLabel="Button Bottom Left">
-                                                        <rect key="frame" x="0.0" y="0.0" width="183" height="206.33333333333334"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="183" height="204.5"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="Blue cross"/>
                                                         <connections>
@@ -69,7 +69,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KNs-ht-Uw2" userLabel="Button Bottom Right">
-                                                        <rect key="frame" x="191" y="0.0" width="183" height="206.33333333333334"/>
+                                                        <rect key="frame" x="191" y="0.0" width="183" height="204.5"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="Blue cross"/>
                                                         <connections>
@@ -96,10 +96,10 @@
                                 </connections>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3OV-zu-tBH" userLabel="Mode  View">
-                                <rect key="frame" x="57" y="627.66666666666663" width="300" height="93.333333333333371"/>
+                                <rect key="frame" x="57" y="627.5" width="300" height="93.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fGP-hs-ZZj" userLabel="View 1" customClass="ShowView" customModule="Instagrid" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="93.333333333333329" height="93.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="93.5" height="93.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NjR-kf-jZz" userLabel="Buttom Layout 1">
                                                 <rect key="frame" x="6" y="6.3333333333333712" width="80" height="80"/>
@@ -110,7 +110,7 @@
                                                 </connections>
                                             </button>
                                             <imageView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="Selected" translatesAutoresizingMaskIntoConstraints="NO" id="DJu-qV-hDC" userLabel="Selected view 1">
-                                                <rect key="frame" x="0.0" y="0.0" width="93.333333333333329" height="93.333333333333329"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="93.5" height="93.5"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -123,12 +123,11 @@
                                             <constraint firstItem="DJu-qV-hDC" firstAttribute="leading" secondItem="fGP-hs-ZZj" secondAttribute="leading" id="oyP-aa-9P4"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="selectIcon1" destination="DJu-qV-hDC" id="Xkv-fw-SSp"/>
                                             <outlet property="selectView1" destination="NjR-kf-jZz" id="Yey-gU-YCq"/>
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Utz-2x-Bkp" userLabel="View 2" customClass="ShowView" customModule="Instagrid" customModuleProvider="target">
-                                        <rect key="frame" x="103.33333333333334" y="0.0" width="93.333333333333343" height="93.333333333333329"/>
+                                        <rect key="frame" x="103.5" y="0.0" width="93" height="93.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dgk-y2-3I7" userLabel="Button Layout 2">
                                                 <rect key="frame" x="6.6666666666666572" y="6.3333333333333712" width="80" height="80"/>
@@ -139,7 +138,7 @@
                                                 </connections>
                                             </button>
                                             <imageView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="Selected" translatesAutoresizingMaskIntoConstraints="NO" id="aiU-fk-Zgz" userLabel="Selected view 2">
-                                                <rect key="frame" x="0.0" y="0.0" width="93.333333333333329" height="93.333333333333329"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="93" height="93.5"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -152,12 +151,11 @@
                                             <constraint firstItem="aiU-fk-Zgz" firstAttribute="leading" secondItem="Utz-2x-Bkp" secondAttribute="leading" id="qkU-zI-nj4"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="selectIcon2" destination="aiU-fk-Zgz" id="vBR-3F-PMu"/>
                                             <outlet property="selectView2" destination="Dgk-y2-3I7" id="CjB-mM-tfW"/>
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fa2-EG-oQJ" userLabel="View 3" customClass="ShowView" customModule="Instagrid" customModuleProvider="target">
-                                        <rect key="frame" x="206.66666666666669" y="0.0" width="93.333333333333314" height="93.333333333333329"/>
+                                        <rect key="frame" x="206.5" y="0.0" width="93.5" height="93.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E6S-zS-dqK" userLabel="Button Layout 3">
                                                 <rect key="frame" x="6.3333333333333144" y="6.3333333333333712" width="80" height="80"/>
@@ -168,7 +166,7 @@
                                                 </connections>
                                             </button>
                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="Selected" translatesAutoresizingMaskIntoConstraints="NO" id="dTZ-Ge-uRs" userLabel="Selected view 3">
-                                                <rect key="frame" x="0.0" y="0.0" width="93.333333333333329" height="93.333333333333329"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="93.5" height="93.5"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -181,7 +179,6 @@
                                             <constraint firstAttribute="trailing" secondItem="dTZ-Ge-uRs" secondAttribute="trailing" id="vKB-BM-6Tw"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="selectIcon3" destination="dTZ-Ge-uRs" id="TAv-Ty-mAr"/>
                                             <outlet property="selectView3" destination="E6S-zS-dqK" id="Lb7-rO-9xc"/>
                                         </connections>
                                     </view>
@@ -204,13 +201,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="ButtonBottomLeft" destination="kt3-Ea-sra" id="xFi-r1-URN"/>
-                        <outlet property="ButtonBottomRight" destination="KNs-ht-Uw2" id="8if-X7-O4B"/>
-                        <outlet property="ButtonTopLeft" destination="T4g-hr-Uel" id="LdY-PR-pAn"/>
-                        <outlet property="ButtonTopRight" destination="TIb-wj-YcS" id="gTk-e3-Mf5"/>
-                        <outlet property="SelectedView1" destination="DJu-qV-hDC" id="LUn-Y3-aaE"/>
-                        <outlet property="SelectedView2" destination="aiU-fk-Zgz" id="Vhv-eB-srN"/>
-                        <outlet property="SelectedView3" destination="dTZ-Ge-uRs" id="Kfi-9a-P1A"/>
+                        <outlet property="SelectView1" destination="DJu-qV-hDC" id="sS0-mY-Vh2"/>
+                        <outlet property="SelectView2" destination="aiU-fk-Zgz" id="aI3-BM-oeE"/>
+                        <outlet property="SelectView3" destination="dTZ-Ge-uRs" id="Sqq-KL-lSp"/>
+                        <outlet property="ShowView" destination="CUw-kF-sAa" id="0up-0l-R9v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

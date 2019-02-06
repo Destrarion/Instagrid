@@ -10,75 +10,64 @@ import UIKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
 
+    var currentButton : UIButton?
     
-    @IBOutlet weak var ButtonTopLeft: UIButton!
+    @IBOutlet weak var SelectView1: UIImageView!
     
-    @IBOutlet weak var ButtonTopRight: UIButton!
+    @IBOutlet weak var SelectView2: UIImageView!
     
+    @IBOutlet weak var SelectView3: UIImageView!
+    
+    
+    @IBOutlet weak var ShowView: ShowView!
     
    
-    @IBOutlet weak var ButtonBottomLeft: UIButton!
-    
-    @IBOutlet weak var ButtonBottomRight: UIButton!
-    
-    
-    @IBOutlet weak var SelectedView1: UIImageView!
-    
-    @IBOutlet weak var SelectedView2: UIImageView!
-    
-    @IBOutlet weak var SelectedView3: UIImageView!
     
     
     @IBAction func TapViewMode1(_ sender: UIButton) {
-        ButtonTopLeft.isHidden = false
-        ButtonTopRight.isHidden = true
-        ButtonBottomLeft.isHidden = false
-        ButtonBottomRight.isHidden = false
-        SelectedView1.isHidden = false
-        SelectedView2.isHidden = true
-        SelectedView3.isHidden = true
+        ShowView.modeView = .modeView1
+        SelectView1.isHidden = false
+        SelectView2.isHidden = true
+        SelectView3.isHidden = true
     }
     
-    
-    
-    
     @IBAction func TapViewMode2(_ sender: UIButton) {
-        ButtonTopLeft.isHidden = false
-        ButtonTopRight.isHidden = false
-        ButtonBottomLeft.isHidden = false
-        ButtonBottomRight.isHidden = true
-        SelectedView1.isHidden = true
-        SelectedView2.isHidden = false
-        SelectedView3.isHidden = true
+        ShowView.modeView = .modeView2
+        SelectView1.isHidden = true
+        SelectView2.isHidden = false
+        SelectView3.isHidden = true
     }
     
     @IBAction func TapViewMode3(_ sender: UIButton) {
-        ButtonTopLeft.isHidden = false
-        ButtonTopRight.isHidden = false
-        ButtonBottomLeft.isHidden = false
-        ButtonBottomRight.isHidden = false
-        SelectedView1.isHidden = true
-        SelectedView2.isHidden = true
-        SelectedView3.isHidden = false
+        ShowView.modeView = .modeView3
+        SelectView1.isHidden = true
+        SelectView2.isHidden = true
+        SelectView3.isHidden = false
     }
     
     
     
     @IBAction func ButtonTopLeft(_ sender: UIButton) {
+        self.currentButton = sender
         chooseImage((Any).self)
     }
     
     @IBAction func ButtonTopRight(_ sender: UIButton) {
+        self.currentButton = sender
         chooseImage((Any).self)
     }
     
     @IBAction func ButtonBottomLeft(_ sender: UIButton) {
+        self.currentButton = sender
         chooseImage((Any).self)
     }
     
     @IBAction func ButtonBottomRight(_ sender: UIButton) {
+        self.currentButton = sender
         chooseImage((Any).self)
     }
+    
+    
     
     func chooseImage ( _ sender: Any){
         
@@ -108,7 +97,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             
             print("image found")
             //do something with an image
-            ButtonTopLeft.setImage(image, for: .normal) 
+           self.currentButton!.setImage(image, for: .normal)
+            
+            self.currentButton!.imageView?.contentMode = .scaleAspectFill
             
         } else {
             print("Not able to get an image")
