@@ -9,7 +9,7 @@
 import UIKit
 
 class ShowView: UIView {
-    
+
     @IBOutlet private var topLeftView : UIButton!
     @IBOutlet private var topRightView : UIButton!
     @IBOutlet private var bottomLeftView : UIButton!
@@ -32,7 +32,7 @@ class ShowView: UIView {
             setModeView(modeView)
         }
     }
-    
+
     private func setModeView ( _ modeView: ModeView){
         switch modeView{
         case .modeView1:
@@ -52,7 +52,7 @@ class ShowView: UIView {
             selectIcon1.isHidden = true
             selectIcon2.isHidden = false
             selectIcon3.isHidden = true
-            
+        
         case .modeView3:
             topLeftView.isHidden = false
             topRightView.isHidden = false
@@ -64,6 +64,6 @@ class ShowView: UIView {
             
         }
     }
-    
+   
     
 }

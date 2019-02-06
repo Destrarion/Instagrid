@@ -29,7 +29,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var SelectedView3: UIImageView!
     
     
-    
     @IBAction func TapViewMode1(_ sender: UIButton) {
         ButtonTopLeft.isHidden = false
         ButtonTopRight.isHidden = true
@@ -39,6 +38,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         SelectedView2.isHidden = true
         SelectedView3.isHidden = true
     }
+    
     
     
     

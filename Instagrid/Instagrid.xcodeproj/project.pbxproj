@@ -7,16 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F0680DB220AD0750023F70B /* ShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0680D9220AD0750023F70B /* ShowView.swift */; };
 		5FB7EB3521E5F166005035B4 /* ThirstySoftRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5FB7EB3421E5F166005035B4 /* ThirstySoftRegular.otf */; };
 		5FC294B421E50D6100D839F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC294B321E50D6100D839F7 /* AppDelegate.swift */; };
 		5FC294B621E50D6100D839F7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC294B521E50D6100D839F7 /* ViewController.swift */; };
 		5FC294B921E50D6100D839F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FC294B721E50D6100D839F7 /* Main.storyboard */; };
 		5FC294BB21E50D6100D839F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FC294BA21E50D6100D839F7 /* Assets.xcassets */; };
 		5FC294BE21E50D6100D839F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FC294BC21E50D6100D839F7 /* LaunchScreen.storyboard */; };
-		5FCFED5B220AC88500201BBC /* ShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCFED59220AC88500201BBC /* ShowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5F0680DA220AD0750023F70B /* Base */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Base; path = Instagrid/View/Base.lproj/ShowView.swift; sourceTree = "<group>"; };
 		5FB7EB3421E5F166005035B4 /* ThirstySoftRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ThirstySoftRegular.otf; sourceTree = "<group>"; };
 		5FC294B021E50D6100D839F7 /* Instagrid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagrid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FC294B321E50D6100D839F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -25,7 +26,6 @@
 		5FC294BA21E50D6100D839F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5FC294BD21E50D6100D839F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5FC294BF21E50D6100D839F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5FCFED5A220AC88500201BBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Base; path = Instagrid/View/Base.lproj/ShowView.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +72,7 @@
 			children = (
 				5FC294BC21E50D6100D839F7 /* LaunchScreen.storyboard */,
 				5FC294B721E50D6100D839F7 /* Main.storyboard */,
-				5FCFED59220AC88500201BBC /* ShowView.swift */,
+				5F0680D9220AD0750023F70B /* ShowView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -176,13 +176,21 @@
 			files = (
 				5FC294B621E50D6100D839F7 /* ViewController.swift in Sources */,
 				5FC294B421E50D6100D839F7 /* AppDelegate.swift in Sources */,
-				5FCFED5B220AC88500201BBC /* ShowView.swift in Sources */,
+				5F0680DB220AD0750023F70B /* ShowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		5F0680D9220AD0750023F70B /* ShowView.swift */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5F0680DA220AD0750023F70B /* Base */,
+			);
+			name = ShowView.swift;
+			sourceTree = "<group>";
+		};
 		5FC294B721E50D6100D839F7 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -197,14 +205,6 @@
 				5FC294BD21E50D6100D839F7 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		5FCFED59220AC88500201BBC /* ShowView.swift */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5FCFED5A220AC88500201BBC /* Base */,
-			);
-			name = ShowView.swift;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
