@@ -68,22 +68,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBAction func ShareSwipe(_ sender: UISwipeGestureRecognizer) {
       
-        // image to share
-        let image1 = self.ShowView.topLeftView.currentImage
-        let image2 = self.ShowView.topRightView.currentImage
-        let image3 = self.ShowView.bottomLeftView.currentImage
-        let image4 = self.ShowView.bottomRightView.currentImage
+        let image = imageConversion(with: ShowView)
         
-        
-        // set up activity view controller
-        let imageToShare = [ image1! , image2! , image3! , image4! ]
+        let imageToShare = [ image! ]
         let activityViewController = UIActivityViewController(activityItems: imageToShare as [Any], applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
         
-        // exclude some activity types from the list (optional)
-        activityViewController.excludedActivityTypes = [ UIActivity.ActivityType.airDrop, UIActivity.ActivityType.postToFacebook ]
-        
-        // present the view controller
         self.present(activityViewController, animated: true, completion: nil)
     }
     
@@ -133,7 +123,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         picker.dismiss(animated: true, completion: nil)
     }
     
-   
+    func imageConversion(with view: UIView) -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.isOpaque, 0.0)
+        defer { UIGraphicsEndImageContext() }
+        if let context = UIGraphicsGetCurrentContext() {
+            view.layer.render(in: context)
+            let image = UIGraphicsGetImageFromCurrentImageContext()
+            return image
+        }
+        return nil
+    }
     
 }
 
