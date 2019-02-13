@@ -48,5 +48,7 @@
 		<string></string>
 		<string>ThirstySoftRegular.otf</string>
 	</array>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Sharing photos to friend !</string>
 </dict>
 </plist>

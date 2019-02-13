@@ -10,10 +10,10 @@ import UIKit
 
 class ShowView: UIView {
     
-    @IBOutlet private var topLeftView : UIButton!
-    @IBOutlet private var topRightView : UIButton!
-    @IBOutlet private var bottomLeftView : UIButton!
-    @IBOutlet private var bottomRightView : UIButton!
+    @IBOutlet public var topLeftView : UIButton!
+    @IBOutlet public var topRightView : UIButton!
+    @IBOutlet public var bottomLeftView : UIButton!
+    @IBOutlet public var bottomRightView : UIButton!
     
     
     @IBOutlet private var selectView1 : UIButton!

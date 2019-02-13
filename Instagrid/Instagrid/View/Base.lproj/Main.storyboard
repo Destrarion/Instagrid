@@ -186,6 +186,7 @@
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.36636401937432483" green="0.79330939054489125" blue="0.83529411764705885" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3OV-zu-tBH" secondAttribute="trailing" constant="57" id="0Ai-cW-dmT"/>
                             <constraint firstItem="7G8-ng-Rm3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="51S-Pp-Zgo"/>
@@ -199,6 +200,9 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3OV-zu-tBH" secondAttribute="bottom" constant="141" id="uFh-Oc-u9Y"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="qLZ-MV-JH3" appends="YES" id="j3d-Iz-Ywi"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="SelectView1" destination="DJu-qV-hDC" id="sS0-mY-Vh2"/>
@@ -208,6 +212,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="qLZ-MV-JH3">
+                    <connections>
+                        <action selector="ShareSwipe:" destination="BYZ-38-t0r" id="Nx8-rV-qm2"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="128.98550724637681" y="131.91964285714286"/>
         </scene>

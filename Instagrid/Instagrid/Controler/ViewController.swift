@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     var currentButton : UIButton?
     
@@ -21,7 +21,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBOutlet weak var ShowView: ShowView!
     
-   
     
     
     @IBAction func TapViewMode1(_ sender: UIButton) {
@@ -67,6 +66,27 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         chooseImage((Any).self)
     }
     
+    @IBAction func ShareSwipe(_ sender: UISwipeGestureRecognizer) {
+      
+        // image to share
+        let image1 = self.ShowView.topLeftView.currentImage
+        let image2 = self.ShowView.topRightView.currentImage
+        let image3 = self.ShowView.bottomLeftView.currentImage
+        let image4 = self.ShowView.bottomRightView.currentImage
+        
+        
+        // set up activity view controller
+        let imageToShare = [ image1! , image2! , image3! , image4! ]
+        let activityViewController = UIActivityViewController(activityItems: imageToShare as [Any], applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
+        
+        // exclude some activity types from the list (optional)
+        activityViewController.excludedActivityTypes = [ UIActivity.ActivityType.airDrop, UIActivity.ActivityType.postToFacebook ]
+        
+        // present the view controller
+        self.present(activityViewController, animated: true, completion: nil)
+    }
+    
     
     
     func chooseImage ( _ sender: Any){
@@ -99,7 +119,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             //do something with an image
            self.currentButton!.setImage(image, for: .normal)
             
-            self.currentButton!.imageView?.contentMode = .scaleAspectFill
+            
             
         } else {
             print("Not able to get an image")
@@ -113,7 +133,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         picker.dismiss(animated: true, completion: nil)
     }
     
-    
+   
     
 }
 
