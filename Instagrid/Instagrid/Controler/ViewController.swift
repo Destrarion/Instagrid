@@ -107,8 +107,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             
             print("image found")
             //do something with an image
-           self.currentButton!.setImage(image, for: .normal)
             
+           self.currentButton!.setImage(image, for: .normal)
+            self.currentButton!.imageView?.contentMode = .scaleAspectFill
+            @
             
             
         } else {
