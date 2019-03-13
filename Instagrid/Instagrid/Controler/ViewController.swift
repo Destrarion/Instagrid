@@ -22,7 +22,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var ShowView: ShowView!
     
     
-    
     @IBAction func TapViewMode1(_ sender: UIButton) {
         ShowView.modeView = .modeView1
         SelectView1.isHidden = false
@@ -67,14 +66,26 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     @IBAction func ShareSwipe(_ sender: UISwipeGestureRecognizer) {
-      
+        animateWhenSharing()
+        
         let image = imageConversion(with: ShowView)
         
         let imageToShare = [ image! ]
         let activityViewController = UIActivityViewController(activityItems: imageToShare as [Any], applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
         
-        self.present(activityViewController, animated: true, completion: nil)
+        activityViewController.completionWithItemsHandler = { (nil, completed, _, error) in
+            if completed {
+                print("Completed!")
+                self.renitialisePositionShowView()
+            } else {
+                print("Canceled!!")
+                self.renitialisePositionShowView()
+            }
+        }
+        present(activityViewController , animated: true) {
+            print("Image Presented!")
+        }
     }
     
     
@@ -96,6 +107,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
          }))
         
          actionSheet.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+        
         
         self.present(actionSheet, animated: true, completion: nil)
         
@@ -136,6 +148,22 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         return nil
     }
     
+    func animateWhenSharing() {
+        let screenHeight = UIScreen.main.bounds.height
+        var translationTransformUp : CGAffineTransform
+        translationTransformUp = CGAffineTransform(translationX: 0, y: -screenHeight)
+        
+        
+        UIView.animate(withDuration: 5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseIn, animations: {self.ShowView.transform = translationTransformUp } , completion: nil)
+        
+    }
+ 
+    func renitialisePositionShowView (){
+        let screenHeight = UIScreen.main.bounds.height
+        var translationTransformdown : CGAffineTransform
+        translationTransformdown = CGAffineTransform(translationX: 0, y: screenHeight)
+        
+        UIView.animate(withDuration: 5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseIn, animations: {self.ShowView.transform = translationTransformdown } , completion: nil)
+        
+    }
 }
-
-
