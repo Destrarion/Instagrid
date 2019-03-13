@@ -159,11 +159,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
  
     func renitialisePositionShowView (){
-        let screenHeight = UIScreen.main.bounds.height
         var translationTransformdown : CGAffineTransform
-        translationTransformdown = CGAffineTransform(translationX: 0, y: screenHeight)
+        translationTransformdown = CGAffineTransform(translationX: 0, y: 0)
         
-        UIView.animate(withDuration: 5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseIn, animations: {self.ShowView.transform = translationTransformdown } , completion: nil)
+        UIView.animate(withDuration: 4, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseIn, animations: {self.ShowView.transform = translationTransformdown } , completion: nil)
+        
+        
         
     }
 }
