@@ -656,6 +656,7 @@
                         </variation>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="qLZ-MV-JH3" appends="YES" id="j3d-Iz-Ywi"/>
+                            <outletCollection property="gestureRecognizers" destination="CCl-R6-XyH" appends="YES" id="dhx-FU-z9F"/>
                         </connections>
                     </view>
                     <connections>
@@ -669,6 +670,11 @@
                 <swipeGestureRecognizer direction="up" id="qLZ-MV-JH3">
                     <connections>
                         <action selector="ShareSwipe:" destination="BYZ-38-t0r" id="Nx8-rV-qm2"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="CCl-R6-XyH" userLabel="Swipe Gesture Recognizer Left">
+                    <connections>
+                        <action selector="ShareSwipeLeft:" destination="BYZ-38-t0r" id="b69-Mf-LII"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>

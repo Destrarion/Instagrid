@@ -64,7 +64,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         self.currentButton = sender
         chooseImage((Any).self)
     }
-    
+    //Sharing when in portrait
     @IBAction func ShareSwipe(_ sender: UISwipeGestureRecognizer) {
         animateWhenSharing()
         
@@ -88,6 +88,30 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
     
+    //Sharing when oriented in landscape
+    @IBAction func ShareSwipeLeft(_ sender: UISwipeGestureRecognizer) {
+        animateWhenSharingLandscape()
+        
+        let image = imageConversion(with: ShowView)
+        
+        let imageToShare = [ image! ]
+        let activityViewController = UIActivityViewController(activityItems: imageToShare as [Any], applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
+        
+        activityViewController.completionWithItemsHandler = { (nil, completed, _, error) in
+            if completed {
+                print("Completed!")
+                self.renitialisePositionShowView()
+            } else {
+                print("Canceled!!")
+                self.renitialisePositionShowView()
+            }
+        }
+        present(activityViewController , animated: true) {
+            print("Image Presented!")
+        }
+        
+    }
     
     
     func chooseImage ( _ sender: Any){
@@ -164,7 +188,22 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         UIView.animate(withDuration: 4, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseIn, animations: {self.ShowView.transform = translationTransformdown } , completion: nil)
         
+    }
+    
+    func animateWhenSharingLandscape() {
+        let screenWidth = UIScreen.main.bounds.width
+        var translationTransformUp : CGAffineTransform
+        translationTransformUp = CGAffineTransform(translationX: -screenWidth, y: 0)
         
+        
+        UIView.animate(withDuration: 5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseIn, animations: {self.ShowView.transform = translationTransformUp } , completion: nil)
         
     }
+    
+    
+    
+    
+    
+    
+    
 }
