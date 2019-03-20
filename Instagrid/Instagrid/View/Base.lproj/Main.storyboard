@@ -664,12 +664,14 @@
                         <outlet property="SelectView2" destination="aiU-fk-Zgz" id="aI3-BM-oeE"/>
                         <outlet property="SelectView3" destination="dTZ-Ge-uRs" id="Sqq-KL-lSp"/>
                         <outlet property="ShowView" destination="CUw-kF-sAa" id="0up-0l-R9v"/>
+                        <outlet property="SwipeLeftOutlet" destination="CCl-R6-XyH" id="6AV-lb-kLX"/>
+                        <outlet property="SwipeUpOutlet" destination="qLZ-MV-JH3" id="8If-lg-EAF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="up" id="qLZ-MV-JH3">
                     <connections>
-                        <action selector="ShareSwipe:" destination="BYZ-38-t0r" id="Nx8-rV-qm2"/>
+                        <action selector="ShareSwipePortrait:" destination="BYZ-38-t0r" id="gXt-mD-Wfe"/>
                     </connections>
                 </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="left" id="CCl-R6-XyH" userLabel="Swipe Gesture Recognizer Left">

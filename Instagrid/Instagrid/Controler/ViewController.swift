@@ -18,9 +18,22 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBOutlet weak var SelectView3: UIImageView!
     
+    @IBOutlet var SwipeUpOutlet: UISwipeGestureRecognizer!
+    
+    @IBOutlet var SwipeLeftOutlet: UISwipeGestureRecognizer!
     
     @IBOutlet weak var ShowView: ShowView!
     
+    override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
+        if fromInterfaceOrientation == .portrait || fromInterfaceOrientation == .portraitUpsideDown{
+            SwipeUpOutlet.isEnabled = false
+            SwipeLeftOutlet.isEnabled = true
+        }
+        else{
+            SwipeUpOutlet.isEnabled = true
+            SwipeLeftOutlet.isEnabled = false
+        }
+    }
     
     @IBAction func TapViewMode1(_ sender: UIButton) {
         ShowView.modeView = .modeView1
@@ -64,28 +77,34 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         self.currentButton = sender
         chooseImage((Any).self)
     }
+    
+    
+    
     //Sharing when in portrait
-    @IBAction func ShareSwipe(_ sender: UISwipeGestureRecognizer) {
-        animateWhenSharing()
+    @IBAction func ShareSwipePortrait(_ sender: UISwipeGestureRecognizer) {
+
+    
+            animateWhenSharing()
         
-        let image = imageConversion(with: ShowView)
+            let image = imageConversion(with: ShowView)
         
-        let imageToShare = [ image! ]
-        let activityViewController = UIActivityViewController(activityItems: imageToShare as [Any], applicationActivities: nil)
-        activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
+            let imageToShare = [ image! ]
+            let activityViewController = UIActivityViewController(activityItems: imageToShare as [Any], applicationActivities: nil)
+            activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
         
-        activityViewController.completionWithItemsHandler = { (nil, completed, _, error) in
-            if completed {
-                print("Completed!")
-                self.renitialisePositionShowView()
-            } else {
-                print("Canceled!!")
-                self.renitialisePositionShowView()
+            activityViewController.completionWithItemsHandler = { (nil, completed, _, error) in
+                if completed {
+                    print("Completed!")
+                    self.renitialisePositionShowView()
+                } else {
+                    print("Canceled!!")
+                    self.renitialisePositionShowView()
+                }
             }
-        }
-        present(activityViewController , animated: true) {
-            print("Image Presented!")
-        }
+            present(activityViewController , animated: true) {
+                print("Image Presented!")
+            }
+        
     }
     
     //Sharing when oriented in landscape
