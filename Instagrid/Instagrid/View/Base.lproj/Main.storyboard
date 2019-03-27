@@ -33,20 +33,20 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="rHT-fZ-tbq" userLabel="Top view">
                                                 <rect key="frame" x="0.0" y="0.0" width="324" height="156.66666666666666"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T4g-hr-Uel">
+                                                    <button opaque="NO" tag="1" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T4g-hr-Uel">
                                                         <rect key="frame" x="0.0" y="0.0" width="158" height="156.66666666666666"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="Blue cross"/>
                                                         <connections>
-                                                            <action selector="ButtonTopLeft:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ku7-8Z-JFr"/>
+                                                            <action selector="ButtonShowView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fYa-eN-WuN"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TIb-wj-YcS" userLabel="Button Top Right">
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TIb-wj-YcS" userLabel="Button Top Right">
                                                         <rect key="frame" x="166" y="0.0" width="158" height="156.66666666666666"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="Blue cross"/>
                                                         <connections>
-                                                            <action selector="ButtonTopRight:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ADp-IL-5u2"/>
+                                                            <action selector="ButtonShowView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dba-2A-4Bl"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -54,20 +54,20 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Q0r-NQ-yjc" userLabel="Bottom view">
                                                 <rect key="frame" x="0.0" y="167.66666666666669" width="324" height="156.33333333333331"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kt3-Ea-sra" userLabel="Button Bottom Left">
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kt3-Ea-sra" userLabel="Button Bottom Left">
                                                         <rect key="frame" x="0.0" y="0.0" width="158" height="156.33333333333334"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="Blue cross"/>
                                                         <connections>
-                                                            <action selector="ButtonBottomLeft:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OEm-J0-eEv"/>
+                                                            <action selector="ButtonShowView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ptM-Di-rsm"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KNs-ht-Uw2" userLabel="Button Bottom Right">
+                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KNs-ht-Uw2" userLabel="Button Bottom Right">
                                                         <rect key="frame" x="166" y="0.0" width="158" height="156.33333333333334"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="Blue cross"/>
                                                         <connections>
-                                                            <action selector="ButtonBottomRight:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9I9-ks-dSE"/>
+                                                            <action selector="ButtonShowView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VB9-EF-L0O"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -102,7 +102,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fa2-EG-oQJ" userLabel="View 3" customClass="ShowView" customModule="Instagrid" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E6S-zS-dqK" userLabel="Button Layout 3">
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E6S-zS-dqK" userLabel="Button Layout 3">
                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="E6S-zS-dqK" secondAttribute="height" multiplier="1:1" id="oGx-BT-w0S"/>
@@ -119,7 +119,7 @@
                                                     </mask>
                                                 </variation>
                                                 <connections>
-                                                    <action selector="TapViewMode3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Cz-T4-hQe"/>
+                                                    <action selector="TouchModeview:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ufZ-wg-JtX"/>
                                                 </connections>
                                             </button>
                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="Selected" translatesAutoresizingMaskIntoConstraints="NO" id="dTZ-Ge-uRs" userLabel="Selected view 3">
@@ -207,7 +207,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Utz-2x-Bkp" userLabel="View 2" customClass="ShowView" customModule="Instagrid" customModuleProvider="target">
                                         <rect key="frame" x="90" y="0.0" width="80" height="80"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dgk-y2-3I7" userLabel="Button Layout 2">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dgk-y2-3I7" userLabel="Button Layout 2">
                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Dgk-y2-3I7" secondAttribute="height" multiplier="1:1" id="Pdf-Di-4oC"/>
@@ -224,7 +224,7 @@
                                                     </mask>
                                                 </variation>
                                                 <connections>
-                                                    <action selector="TapViewMode2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7v0-f7-mDT"/>
+                                                    <action selector="TouchModeview:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8vd-1c-Pd9"/>
                                                 </connections>
                                             </button>
                                             <imageView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="Selected" translatesAutoresizingMaskIntoConstraints="NO" id="aiU-fk-Zgz" userLabel="Selected view 2">
@@ -328,7 +328,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fGP-hs-ZZj" userLabel="View 1" customClass="ShowView" customModule="Instagrid" customModuleProvider="target">
                                         <rect key="frame" x="180" y="0.0" width="80" height="80"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NjR-kf-jZz" userLabel="Buttom Layout 1">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NjR-kf-jZz" userLabel="Buttom Layout 1">
                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="NjR-kf-jZz" secondAttribute="height" multiplier="1:1" id="d9D-yE-87B"/>
@@ -345,7 +345,7 @@
                                                     </mask>
                                                 </variation>
                                                 <connections>
-                                                    <action selector="TapViewMode1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j4G-0i-mxQ"/>
+                                                    <action selector="TouchModeview:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4Mj-D5-Rn1"/>
                                                 </connections>
                                             </button>
                                             <imageView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="Selected" translatesAutoresizingMaskIntoConstraints="NO" id="DJu-qV-hDC" userLabel="Selected view 1">
@@ -486,7 +486,7 @@
                                 </variation>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="-20" translatesAutoresizingMaskIntoConstraints="NO" id="YSw-7C-SmZ" userLabel="Stack Up to share">
-                                <rect key="frame" x="126.33333333333333" y="136.33333333333334" width="161.33333333333337" height="60.333333333333343"/>
+                                <rect key="frame" x="126.33333333333331" y="136.33333333333334" width="161.33333333333337" height="60.333333333333343"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="^" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZK-Yk-TFy">
                                         <rect key="frame" x="71.333333333333329" y="0.0" width="19" height="55"/>
@@ -520,7 +520,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7G8-ng-Rm3" secondAttribute="trailing" constant="77" id="9WG-DD-HBy"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nkf-xJ-cy8" secondAttribute="bottom" constant="20" id="BXf-lh-hgt"/>
                             <constraint firstItem="7G8-ng-Rm3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="CGC-Pq-eT4">
-                                <variation key="heightClass=compact" constant="5"/>
+                                <variation key="heightClass=compact" constant="-30"/>
                             </constraint>
                             <constraint firstItem="7G8-ng-Rm3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="77" id="Ht7-dr-YIf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7G8-ng-Rm3" secondAttribute="trailing" constant="77" id="Hwh-5X-7Bs"/>
@@ -536,7 +536,7 @@
                             <constraint firstItem="H0V-PK-JBX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ZQF-bx-cQp"/>
                             <constraint firstItem="CUw-kF-sAa" firstAttribute="top" secondItem="7G8-ng-Rm3" secondAttribute="bottom" constant="30" id="ac7-La-tLl"/>
                             <constraint firstItem="CUw-kF-sAa" firstAttribute="top" secondItem="7G8-ng-Rm3" secondAttribute="bottom" constant="30" id="bFK-63-Ku1">
-                                <variation key="heightClass=compact" constant="5"/>
+                                <variation key="heightClass=compact" constant="-40"/>
                             </constraint>
                             <constraint firstItem="CUw-kF-sAa" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="d7i-x9-O2W"/>
                             <constraint firstItem="7G8-ng-Rm3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="dPA-ng-Ifb"/>
@@ -655,8 +655,7 @@
                             </mask>
                         </variation>
                         <connections>
-                            <outletCollection property="gestureRecognizers" destination="qLZ-MV-JH3" appends="YES" id="j3d-Iz-Ywi"/>
-                            <outletCollection property="gestureRecognizers" destination="CCl-R6-XyH" appends="YES" id="dhx-FU-z9F"/>
+                            <outletCollection property="gestureRecognizers" destination="l6u-jm-h2Z" appends="YES" id="4su-In-i90"/>
                         </connections>
                     </view>
                     <connections>
@@ -664,19 +663,13 @@
                         <outlet property="SelectView2" destination="aiU-fk-Zgz" id="aI3-BM-oeE"/>
                         <outlet property="SelectView3" destination="dTZ-Ge-uRs" id="Sqq-KL-lSp"/>
                         <outlet property="ShowView" destination="CUw-kF-sAa" id="0up-0l-R9v"/>
-                        <outlet property="SwipeLeftOutlet" destination="CCl-R6-XyH" id="6AV-lb-kLX"/>
-                        <outlet property="SwipeUpOutlet" destination="qLZ-MV-JH3" id="8If-lg-EAF"/>
+                        <outlet property="SwipeGestureOverall" destination="l6u-jm-h2Z" id="PmC-cm-a2C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="up" id="qLZ-MV-JH3">
+                <swipeGestureRecognizer direction="right" id="l6u-jm-h2Z" userLabel="Swipe Gesture Recognizer Overall">
                     <connections>
-                        <action selector="ShareSwipePortrait:" destination="BYZ-38-t0r" id="gXt-mD-Wfe"/>
-                    </connections>
-                </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="left" id="CCl-R6-XyH" userLabel="Swipe Gesture Recognizer Left">
-                    <connections>
-                        <action selector="ShareSwipeLeft:" destination="BYZ-38-t0r" id="b69-Mf-LII"/>
+                        <action selector="ShareSwipeOverall:" destination="BYZ-38-t0r" id="bhs-0i-mYr"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
