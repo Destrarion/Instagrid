@@ -14,6 +14,7 @@
 		5FC294B921E50D6100D839F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FC294B721E50D6100D839F7 /* Main.storyboard */; };
 		5FC294BB21E50D6100D839F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FC294BA21E50D6100D839F7 /* Assets.xcassets */; };
 		5FC294BE21E50D6100D839F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FC294BC21E50D6100D839F7 /* LaunchScreen.storyboard */; };
+		5FFF84D7225DE20A009274ED /* Delm-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5FFF84D6225DE20A009274ED /* Delm-Medium.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		5FC294BA21E50D6100D839F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5FC294BD21E50D6100D839F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5FC294BF21E50D6100D839F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5FFF84D6225DE20A009274ED /* Delm-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Delm-Medium.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				5FC294B321E50D6100D839F7 /* AppDelegate.swift */,
+				5FFF84D6225DE20A009274ED /* Delm-Medium.otf */,
 				5FB7EB3421E5F166005035B4 /* ThirstySoftRegular.otf */,
 				5FC294BA21E50D6100D839F7 /* Assets.xcassets */,
 			);
@@ -161,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FC294BE21E50D6100D839F7 /* LaunchScreen.storyboard in Resources */,
+				5FFF84D7225DE20A009274ED /* Delm-Medium.otf in Resources */,
 				5FC294BB21E50D6100D839F7 /* Assets.xcassets in Resources */,
 				5FB7EB3521E5F166005035B4 /* ThirstySoftRegular.otf in Resources */,
 				5FC294B921E50D6100D839F7 /* Main.storyboard in Resources */,
@@ -333,6 +337,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 578R27WKR9;
 				INFOPLIST_FILE = Instagrid/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -351,6 +356,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 578R27WKR9;
 				INFOPLIST_FILE = Instagrid/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

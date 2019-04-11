@@ -9,117 +9,118 @@
 import UIKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
+    
     var currentButton : UIButton?
     
-    @IBOutlet weak var SelectView1: UIImageView!
+
+    @IBOutlet weak var selectView1: UIImageView!
     
-    @IBOutlet weak var SelectView2: UIImageView!
+    @IBOutlet weak var selectView2: UIImageView!
     
-    @IBOutlet weak var SelectView3: UIImageView!
+    @IBOutlet weak var selectView3: UIImageView!
     
-    @IBOutlet var SwipeGestureOverall: UISwipeGestureRecognizer!
+    @IBOutlet var swipeGestureOverall: UISwipeGestureRecognizer!
     
-    @IBOutlet weak var ShowView: ShowView!
+    @IBOutlet weak var showView: ShowView!
     
     override func viewDidLoad() {
         let orientation = UIApplication.shared.statusBarOrientation
         if orientation == .portrait || orientation == .portraitUpsideDown{
-            SwipeGestureOverall.direction = .up
+            swipeGestureOverall.direction = .up
         }
         else{
-            SwipeGestureOverall.direction = .left
+            swipeGestureOverall.direction = .left
         }
     }
     
     override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
         if fromInterfaceOrientation == .portrait || fromInterfaceOrientation == .portraitUpsideDown{
-            SwipeGestureOverall.direction = .left
-        }
-        else{
-            SwipeGestureOverall.direction = .up
+            swipeGestureOverall.direction = .left
+        }else{
+            swipeGestureOverall.direction = .up
         }
     }
     
-    @IBAction func TouchModeview(_ sender: UIButton){
+    @IBAction func touchModeview(_ sender: UIButton){
         switch sender.tag {
         case 1:
-            ShowView.modeView = .modeView1
-            SelectView1.isHidden = false
-            SelectView2.isHidden = true
-            SelectView3.isHidden = true
+            showView.modeView = .modeView1
+            selectView1.isHidden = false
+            selectView2.isHidden = true
+            selectView3.isHidden = true
         case 2:
-            ShowView.modeView = .modeView2
-            SelectView1.isHidden = true
-            SelectView2.isHidden = false
-            SelectView3.isHidden = true
+            showView.modeView = .modeView2
+            selectView1.isHidden = true
+            selectView2.isHidden = false
+            selectView3.isHidden = true
         case 3:
-            ShowView.modeView = .modeView3
-            SelectView1.isHidden = true
-            SelectView2.isHidden = true
-            SelectView3.isHidden = false
+            showView.modeView = .modeView3
+            selectView1.isHidden = true
+            selectView2.isHidden = true
+            selectView3.isHidden = false
         default:
             print("errorModeView on the Switch")
         }
     }
     
-    @IBAction func ButtonShowView(_ sender: UIButton){
+    @IBAction func buttonShowView(_ sender: UIButton){
         self.currentButton = sender
         chooseImage((Any).self)
     }
     
-    @IBAction func ShareSwipeOverall(_ sender : UISwipeGestureRecognizer){
+    @IBAction func shareSwipeOverall(_ sender : UISwipeGestureRecognizer){
         let orientation = UIApplication.shared.statusBarOrientation
         if orientation.isPortrait{
             
-            SwipeGestureOverall.direction = .up
+            swipeGestureOverall.direction = .up
             
             animateWhenSharing()
             
-            let image = imageConversion(with: ShowView)
+            let image = imageConversion(with: showView)
             
-            let imageToShare = [ image! ]
-            let activityViewController = UIActivityViewController(activityItems: imageToShare as [Any], applicationActivities: nil)
-            activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
             
-            activityViewController.completionWithItemsHandler = { (nil, completed, _, error) in
-                if completed {
-                    print("Completed!")
-                    self.renitialisePositionShowView()
-                } else {
-                    print("Canceled!!")
-                    self.renitialisePositionShowView()
+            if let imageToShare = image {
+                let activityViewController = UIActivityViewController(activityItems: [imageToShare] as [Any], applicationActivities: nil)
+                activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
+                
+                activityViewController.completionWithItemsHandler = { (nil, completed, _, error) in
+                    if completed {
+                        print("Completed!")
+                        self.renitialisePositionShowView()
+                    } else {
+                        print("Canceled!!")
+                        self.renitialisePositionShowView()
+                    }
+                }
+                present(activityViewController , animated: true) {
+                    print("Image Presented!")
                 }
             }
-            present(activityViewController , animated: true) {
-                print("Image Presented!")
-            }
-            
         }else {
-            SwipeGestureOverall.direction = .left
+            swipeGestureOverall.direction = .left
             
             animateWhenSharingLandscape()
             
-            let image = imageConversion(with: ShowView)
+            let image = imageConversion(with: showView)
             
-            let imageToShare = [ image! ]
-            let activityViewController = UIActivityViewController(activityItems: imageToShare as [Any], applicationActivities: nil)
-            activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
-            
-            activityViewController.completionWithItemsHandler = { (nil, completed, _, error) in
-                if completed {
-                    print("Completed!")
-                    self.renitialisePositionShowView()
-                } else {
-                    print("Canceled!!")
-                    self.renitialisePositionShowView()
+            if let imageToShare = image {
+                let activityViewController = UIActivityViewController(activityItems: [imageToShare] as [Any], applicationActivities: nil)
+                activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
+                
+                activityViewController.completionWithItemsHandler = { (nil, completed, _, error) in
+                    if completed {
+                        print("Completed!")
+                        self.renitialisePositionShowView()
+                    } else {
+                        print("Canceled!!")
+                        self.renitialisePositionShowView()
+                    }
+                }
+                present(activityViewController , animated: true) {
+                    print("Image Presented!")
                 }
             }
-            present(activityViewController , animated: true) {
-                print("Image Presented!")
-            }
         }
-        
     }
     
     func chooseImage ( _ sender: Any){
@@ -130,31 +131,34 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imagePickerController.modalPresentationStyle = .overCurrentContext
         
         
+        
         let actionSheet = UIAlertController(title: "Photo Source", message: "choose a source", preferredStyle: .actionSheet)
         
-        actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (action: UIAlertAction) in imagePickerController.sourceType = .camera
+        if UIImagePickerController.isSourceTypeAvailable(.camera){
+            actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (action: UIAlertAction) in imagePickerController.sourceType = .camera
+                self.present(imagePickerController, animated: true, completion: nil)
+            }))
+        }
+        
+        actionSheet.addAction(UIAlertAction(title: "Photos Library", style: .default, handler: { (action: UIAlertAction) in imagePickerController.sourceType = .photoLibrary
             self.present(imagePickerController, animated: true, completion: nil)
         }))
         
-         actionSheet.addAction(UIAlertAction(title: "Photos Library", style: .default, handler: { (action: UIAlertAction) in imagePickerController.sourceType = .photoLibrary
-            self.present(imagePickerController, animated: true, completion: nil)
-         }))
-        
-         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
         
         
         self.present(actionSheet, animated: true, completion: nil)
         
     }
     
-     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey  : Any]) {
-    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey  : Any]) {
+        
         if let image = info[.originalImage] as? UIImage {
             
             print("image found")
             //do something with an image
             
-           self.currentButton!.setImage(image, for: .normal)
+            self.currentButton!.setImage(image, for: .normal)
             self.currentButton!.imageView?.contentMode = .scaleAspectFill
             
             
@@ -188,15 +192,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         translationTransformUp = CGAffineTransform(translationX: 0, y: -screenHeight)
         
         
-        UIView.animate(withDuration: 5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseIn, animations: {self.ShowView.transform = translationTransformUp } , completion: nil)
+        UIView.animate(withDuration: 5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseIn, animations: {self.showView.transform = translationTransformUp } , completion: nil)
         
     }
- 
+    
     func renitialisePositionShowView (){
         var translationTransformdown : CGAffineTransform
         translationTransformdown = CGAffineTransform(translationX: 0, y: 0)
         
-        UIView.animate(withDuration: 4, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseIn, animations: {self.ShowView.transform = translationTransformdown } , completion: nil)
+        UIView.animate(withDuration: 4, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseIn, animations: {self.showView.transform = translationTransformdown } , completion: nil)
         
     }
     
@@ -206,9 +210,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         translationTransformUp = CGAffineTransform(translationX: -screenWidth, y: 0)
         
         
-        UIView.animate(withDuration: 5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseIn, animations: {self.ShowView.transform = translationTransformUp } , completion: nil)
+        UIView.animate(withDuration: 5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseIn, animations: {self.showView.transform = translationTransformUp } , completion: nil)
         
     }
-
+    
     
 }
